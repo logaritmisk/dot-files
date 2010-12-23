@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs_inc")
+(add-to-list 'load-path "~/.emacs.d")
 
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 
