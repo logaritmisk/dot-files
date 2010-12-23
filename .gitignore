@@ -1,7 +1,6 @@
 *
-
 !.gitignore
 !.gitconfig
-
 !.emacs
 !.emacs_inc
+!.emacs_inc/*
