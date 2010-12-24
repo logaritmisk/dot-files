@@ -4,3 +4,4 @@
 !.emacs
 !.emacs.d
 !.emacs.d/*
+!.bash_alias
