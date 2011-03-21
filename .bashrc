@@ -1,3 +1,5 @@
+export PATH="$PATH:/usr/local/sbin"
+
 # bash colors
 export color_none='\e[0m'
 export color_white='\e[1;37m'
@@ -34,3 +36,6 @@ export CLICOLOR=true
 
 # bash alias
 . ~/.bash_alias
+
+
+export COPYFILE_DISABLE=true
