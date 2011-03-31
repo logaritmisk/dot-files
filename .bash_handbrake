@@ -1,0 +1,15 @@
+mkv_() {
+  i="$1";
+  shift;
+  o="${i%.*}.mkv";
+
+  HandBrakeCLI -Z 'High Profile' -f mkv -i $i -o $o $@
+}
+
+ipad_() {
+  i="$1";
+  shift;
+  o="${i%.*}.m4v";
+
+  HandBrakeCLI -Z 'iPad' -i $i -o $o $@
+}
