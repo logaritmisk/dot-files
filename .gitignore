@@ -6,3 +6,5 @@
 !.emacs.d/*
 !.bashrc
 !.bash_alias
+!.bash_growlnotify
+!.bash_handbrake

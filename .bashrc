@@ -40,6 +40,8 @@ export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gra
 # Bash alias
 . ~/.bash_alias
 
+# growlnotify
+which -s growlnotify && . .bash_growlnotify
 
 # HandBrakeCLI
 which -s HandBrakeCLI && . .bash_handbrake
