@@ -49,3 +49,17 @@ which -s HandBrakeCLI && . .bash_handbrake
 
 # No ._ files when copying files
 export COPYFILE_DISABLE=true
+
+
+# fortune & cowsay
+if which -s fortune && which -s cowsay; then
+  _f() {
+    o='bdgpstwy'
+    c=( $(ls `brew --prefix cowsay`/share/cows) )
+    
+    fortune -s | cowsay -${o:$(let "r=$RANDOM % ${#o}"; echo $r;):1} -f${c[$(let "r=$RANDOM % ${#c}"; echo $r;)]}
+  }
+  
+  _f
+  unset _f
+fi
