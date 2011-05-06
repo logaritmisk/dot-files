@@ -57,7 +57,7 @@ if which -s fortune && which -s cowsay; then
     o='bdgpstwy'
     c=( $(ls `brew --prefix cowsay`/share/cows) )
     
-    fortune -s | cowsay -${o:$(let "r=$RANDOM % ${#o}"; echo $r;):1} -f${c[$(let "r=$RANDOM % ${#c}"; echo $r;)]}
+    fortune -s | cowsay -${o:$(($RANDOM % ${#o})):1} -f${c[$(($RANDOM % ${#c}))]}
   }
   
   _f
