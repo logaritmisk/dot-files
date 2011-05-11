@@ -1,6 +1,6 @@
 g_() {
-  m="$1";
+  m="${1}";
   shift;
   
-  growlnotify -m"$m" $@;
+  growlnotify -m"${m}" "$@";
 }
