@@ -1,6 +1,9 @@
 # Export path with sbin
 export PATH="$PATH:/usr/local/sbin"
 
+# Export editor
+export EDITOR=emacs
+
 
 # Bash colors
 export color_none='\e[0m'
