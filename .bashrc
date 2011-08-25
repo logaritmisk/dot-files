@@ -4,6 +4,10 @@ export PATH="$PATH:/usr/local/sbin"
 # Export editor
 export EDITOR=emacs
 
+# Completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
 
 # Bash colors
 export color_none='\e[0m'
