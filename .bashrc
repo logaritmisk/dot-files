@@ -4,29 +4,19 @@ export PATH="$PATH:/usr/local/sbin"
 # Export editor
 export EDITOR=emacs
 
+# Export colors
+export TERM=xterm-256color
+
+
 # Completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
-# Bash colors
-export color_none='\e[0m'
-export color_white='\e[1;37m'
-export color_black='\e[0;30m'
-export color_blue='\e[0;34m'
-export color_light_blue='\e[1;34m'
-export color_green='\e[0;32m'
-export color_light_green='\e[1;32m'
-export color_cyan='\e[0;36m'
-export color_light_cyan='\e[1;36m'
-export color_red="\e[0;31m"
-export color_light_red='\e[1;31m'
-export color_purple='\e[0;35m'
-export color_light_purple='\e[1;35m'
-export color_brown='\e[0;33m'
-export color_yellow='\e[1;33m'
-export color_gray='\e[0;90m'
-export color_light_gray='\e[0;37m'
+# Z
+if [ -f ~/System/z.sh ]; then
+  . ~/System/z.sh
+fi
 
 
 # CLI color
@@ -56,6 +46,7 @@ which -s HandBrakeCLI && . .bash_handbrake
 
 # No ._ files when copying files
 export COPYFILE_DISABLE=true
+export COPY_EXTENDED_ATTRIBUTES_DISABLED=true
 
 
 # fortune & cowsay
@@ -70,3 +61,4 @@ if which -s fortune && which -s cowsay; then
   _f
   unset _f
 fi
+
