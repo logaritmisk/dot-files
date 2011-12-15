@@ -29,8 +29,8 @@ function ssh() { o=$TERM; TERM=xterm-color; `which ssh` $@; TERM=$o; }
 
 
 # Git piece
-# GIT_PS1_SHOWDIRTYSTATE=true
-# GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s)\[$color_none\]")'
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s)\[$color_none\]")'
 
 # Date piece
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
