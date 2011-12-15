@@ -1,5 +1,8 @@
 (add-to-list 'load-path "~/.emacs.d")
 
+(setq c-basic-offset 2)
+(setq tab-width 2)
+
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 
 (add-to-list 'same-window-buffer-names "*Buffer List*")
