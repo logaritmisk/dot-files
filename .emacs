@@ -1,11 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d")
 
-(setq c-basic-offset 2)
-(setq tab-width 2)
-
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 
-(add-to-list 'same-window-buffer-names "*Buffer List*")
 (add-to-list 'auto-mode-alist '("\\.php$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.module$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.test$" . drupal-mode))
@@ -28,29 +24,11 @@
 (setq auto-save-default nil)
 
 (setq c-basic-offset 2)
-(setq indent-tabs-mode 0)
+(setq tab-width 2)
 
+;; Use spaces by default.
+(setq indent-tabs-mode nil)
 
-(defun wicked/php-mode-init ()
-  (setq fill-column 78)
-  (setq show-paren-mode t)
-  (c-set-offset 'arglist-cont 0)
-  (c-set-offset 'arglist-intro '+)
-  (c-set-offset 'case-label '+)
-  (c-set-offset 'arglist-close 0))
-
-(defun refresh-file ()
-  (interactive)
-  (revert-buffer t t t))
-
-(defun drupal-mode ()
-  (interactive)
-  (php-mode)
-  (setq c-basic-offset 2)
-  (setq indent-tabs-mode 0)
-  (c-set-offset 'case-label '+)
-  (c-set offset 'arglist-intro '+)
-  (message "Drupal mode activated."))
-
-
-(add-hook 'php-mode-hook 'wicked/php-mode-init)
+;; Show line and column number.
+(setq line-number-mode t)
+(setq column-number-mode t)
