@@ -1,6 +1,19 @@
 (add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/ecb-2.40")
+
+(load-file "~/.emacs.d/cedet-1.0.1/common/cedet.el")
+
+(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
+
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-hober)))
 
 (require 'php-mode)
+(require 'ecb-autoloads)
+(require 'zenburn)
 
 (load "drupal-mode")
 
@@ -11,7 +24,7 @@
 (add-to-list 'auto-mode-alist '("\\.test$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.install$" . drupal-mode))
-(add-to-list 'auto-mode-alist '("\\.profile$" . drupal-mode))
+;(add-to-list 'auto-mode-alist '("^.+\.profile$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.engine$" . drupal-mode))
 
 ;(global-set-key (kbd "TAB") 'self-insert-command)
@@ -41,3 +54,23 @@
 
 ;; Delete trailing whitespace.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Mac keyboard stuff.
+(setq mac-option-modifier nil
+      mac-command-modifier 'meta
+      x-select-enable-clipboard t)
+
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(ecb-layout-window-sizes (quote (("left8" (0.22014925373134328 . 0.29411764705882354) (0.22014925373134328 . 0.23529411764705882) (0.22014925373134328 . 0.29411764705882354) (0.22014925373134328 . 0.16176470588235295)))))
+ '(ecb-options-version "2.40"))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )

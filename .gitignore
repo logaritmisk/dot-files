@@ -4,8 +4,6 @@
 !.emacs
 !.emacs.d
 !.emacs.d/*
-!.bashrc
-!.bash_alias
-!.bash_growlnotify
-!.bash_handbrake
+!.profile
+!.bash_aliases
 !.irssi/config
