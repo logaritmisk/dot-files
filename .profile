@@ -1,5 +1,5 @@
-# Exports.
-export PATH="$PATH:/usr/local/sbin"
+B# Exports.
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export EDITOR=emacs
 export TERM=xterm-256color
 export CLICOLOR=true
@@ -24,7 +24,8 @@ export color_gray='\e[0;90m'
 export color_light_gray='\e[0;37m'
 
 
-# function ssh() { o=$TERM; TERM=xterm-color; `which ssh` $@; TERM=$o; }
+# ssh alias to fix TERM problem.
+function ssh() { local o=$TERM; TERM=xterm-color; `which ssh` $@; TERM=$o; }
 
 
 # Git piece.
