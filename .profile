@@ -1,8 +1,33 @@
-B# Exports.
+#!/bin/bash
+
+# do not bell on tab-completion
+set bell-style none
+
+# enable 8bit input
+set input-meta on
+
+# disable stripping of 8bit characters
+set convert-meta off
+
+# enable 8bit output
+set output-meta on
+
+# show multiple possibilities on tab completion
+set show-all-if-ambiguous on
+
+# set file completion case-insensitive
+set completion-ignore-case on
+
+# completes names which are symbolic links to directories with slash appended
+set mark-symlinked-directories on
+
+
+# Exports.
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export EDITOR=emacs
 export TERM=xterm-256color
 export CLICOLOR=true
+
 
 # Bash colors.
 export color_none='\e[0m'
