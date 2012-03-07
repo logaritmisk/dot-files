@@ -3,7 +3,6 @@
 
 ; Colors as pretty.
 (require 'color-theme)
-(require 'color-theme-tomorrow)
 (color-theme-comidia)
 
 ; Inhibit.
