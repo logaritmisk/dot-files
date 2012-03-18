@@ -53,12 +53,12 @@ export color_light_gray='\e[0;37m'
 function ssh() { local o=$TERM; TERM=xterm-color; `which ssh` $@; TERM=$o; }
 
 
+# Date piece.
+DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
+
 # Git piece.
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s)\[$color_none\]")'
-
-# Date piece.
-DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
 
 # Bash prompt.
 export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gray}\]\w${GIT_PIECE:-""}\n\[${color_green}\]\$\[${color_none}\] "
