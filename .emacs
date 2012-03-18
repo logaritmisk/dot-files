@@ -54,7 +54,7 @@
 (add-to-list 'auto-mode-alist '("\\.engine$" . drupal-mode))
 
 
-;; Flymake
+; Flymake
 (require 'flymake)
 
 (defun flymake-php-init ()
@@ -68,12 +68,11 @@
 
 (add-to-list 'flymake-allowed-file-name-masks '("\\.php$" flymake-php-init))
 
-;; Drupal-type extensions
-(add-to-list 'flymake-allowed-file-name-masks '("\\.module$" flymake-php-init))
-(add-to-list 'flymake-allowed-file-name-masks '("\\.install$" flymake-php-init))
-(add-to-list 'flymake-allowed-file-name-masks '("\\.inc$" flymake-php-init))
-(add-to-list 'flymake-allowed-file-name-masks '("\\.engine$" flymake-php-init))
+;(add-to-list 'flymake-allowed-file-name-masks '("\\.module$" flymake-php-init))
+;(add-to-list 'flymake-allowed-file-name-masks '("\\.install$" flymake-php-init))
+;(add-to-list 'flymake-allowed-file-name-masks '("\\.inc$" flymake-php-init))
+;(add-to-list 'flymake-allowed-file-name-masks '("\\.engine$" flymake-php-init))
 
-(add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
-(define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
-(define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
+;(add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
+;(define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
+;(define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
