@@ -17,6 +17,11 @@
 (setq c-basic-offset 2)
 (setq tab-width 2)
 
+; UTF-8 love.
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 ; Use spaces by default.
 (setq indent-tabs-mode nil)
 
