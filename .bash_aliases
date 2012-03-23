@@ -11,4 +11,5 @@ alias e="emacsclient -na $EDITOR"
 
 alias wget="wget --content-disposition"
 
-alias phpcs="php $HOME/Temporary/PHP_CodeSniffer-1.3.3/scripts/phpcs --standard=Drupal --report-width=`tput cols`"
+alias phpcs="phpcs --standard=Drupal --report-width=`tput cols`"
+alias phpcs-all="phpcs --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt"
