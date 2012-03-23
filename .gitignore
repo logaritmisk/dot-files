@@ -5,6 +5,7 @@
 !.emacs.d
 !.emacs.d/*
 !.profile
+!.inputrc
 !.bash_aliases
 !.irssi/config
 !.tmux.conf
