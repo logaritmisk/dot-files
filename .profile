@@ -51,6 +51,8 @@ test -f ~/System/z.sh && . ~/System/z.sh
 # Bash alias.
 test -f ~/.bash_aliases && . ~/.bash_aliases
 
+# Load all extensions.
+for f in ~/.ext/*; do test -f "$f" && . "$f"; done
 
 # No ._ files when copying files.
 export COPYFILE_DISABLE=true

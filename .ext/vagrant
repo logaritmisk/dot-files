@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if which -s vagrant; then
+  alias vm="vagrant"
+fi
