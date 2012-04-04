@@ -43,6 +43,7 @@
       mac-command-modifier 'meta
       x-select-enable-clipboard t)
 
+
 ; PHP mode.
 (require 'php-mode)
 
@@ -57,6 +58,14 @@
 (add-to-list 'auto-mode-alist '("\\.install$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.profile$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.engine$" . drupal-mode))
+
+
+; Puppet mode.
+(load "puppet-mode-init")
+
+
+; CSS mode.
+(setq css-indent-offset 2)
 
 
 ; Flymake
@@ -81,7 +90,3 @@
 (add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
 (define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
 (define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
-
-
-; Puppet mode.
-(load "puppet-mode-init")
