@@ -27,8 +27,13 @@ export color_gray='\e[0;90m'
 export color_light_gray='\e[0;37m'
 
 
-# ssh alias to fix TERM problem.
-function ssh() { local o=$TERM; TERM=xterm-color; `which ssh` $@; TERM=$o; }
+# SSH alias to fix TERM problem.
+function ssh() {
+  local old=$TERM
+
+  TERM=xterm-color `which ssh` $@
+  TERM=$old
+}
 
 
 # Date piece.
@@ -45,9 +50,6 @@ export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gra
 # Bash completion.
 test -f `brew --prefix`/etc/bash_completion && . `brew --prefix`/etc/bash_completion
 
-# Z.
-test -f ~/System/z.sh && . ~/System/z.sh
-
 # Bash alias.
 test -f ~/.bash_aliases && . ~/.bash_aliases
 
@@ -59,7 +61,7 @@ export COPYFILE_DISABLE=true
 export COPY_EXTENDED_ATTRIBUTES_DISABLED=true
 
 
-# fortune, cowsay, & lolcat.
+# Fortune, Cowsay, & Lolcat.
 if which -s fortune && which -s cowsay && which -s lolcat; then
   _f() {
     o='bdgpstwy'
