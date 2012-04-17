@@ -43,11 +43,21 @@
       mac-command-modifier 'meta
       x-select-enable-clipboard t)
 
+; Nice refresh feature.
+(defun refresh-file ()
+  (interactive)
+  (revert-buffer t t t))
+
+(global-set-key [f5] 'refresh-file)
+
+
+; Conf windows mode.
+(autoload 'conf-windows-mode "conf-windows-mode" "Mode for info files." t)
+
 
 ; PHP mode.
 (require 'php-mode)
-
-(load "drupal-mode")
+(require 'drupal-mode)
 
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 
@@ -58,6 +68,9 @@
 (add-to-list 'auto-mode-alist '("\\.install$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.profile$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.engine$" . drupal-mode))
+(add-to-list 'auto-mode-alist '("\\.info" . conf-windows-mode))
+
+(load "drupal-mode")
 
 
 ; Puppet mode.
@@ -70,6 +83,12 @@
 
 ; Flymake
 (require 'flymake)
+(require 'flymake-cursor)
+
+(add-hook 'php-mode-hook (lambda() (flymake-mode 1)))
+(add-hook 'drupal-mode-hook (lambda() (flymake-mode 1)))
+(define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
+(define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
 
 (defun flymake-php-init ()
   "Use php to check the syntax of the current file."
@@ -86,7 +105,3 @@
 (add-to-list 'flymake-allowed-file-name-masks '("\\.install$" flymake-php-init))
 (add-to-list 'flymake-allowed-file-name-masks '("\\.inc$" flymake-php-init))
 (add-to-list 'flymake-allowed-file-name-masks '("\\.engine$" flymake-php-init))
-
-(add-hook 'php-mode-hook (lambda () (flymake-mode 1)))
-(define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
-(define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
