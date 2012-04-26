@@ -7,8 +7,6 @@
 !.profile
 !.inputrc
 !.bash_aliases
-!.irssi
-!.irssi/*
 !.tmux.conf
 !.ext
 !.ext/*
