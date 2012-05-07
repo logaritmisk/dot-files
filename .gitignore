@@ -4,9 +4,10 @@
 !.emacs
 !.emacs.d
 !.emacs.d/*
+!.vimrc
 !.profile
 !.inputrc
 !.bash_aliases
 !.tmux.conf
 !.ext
-!.ext/*
+!.ext/
