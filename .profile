@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Get prefix if brew is installed.
+readonly _prefix=$(which brew > /dev/null && brew --prefix || echo '')
+
+
 # Exports.
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export EDITOR=emacs
@@ -47,9 +51,7 @@ GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s)\[$color_none\]")'
 export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gray}\]\w${GIT_PIECE:-""}\n\[${color_green}\]\$\[${color_none}\] "
 
 # Bash completion.
-if which brew > /dev/null && test -f `brew --prefix`/etc/bash_completion; then
-  . `brew --prefix`/etc/bash_completion
-fi
+test -f "${_prefix}/etc/bash_completion" && . "${_prefix}/etc/bash_completion"
 
 # Bash alias.
 test -f ~/.bash_aliases && . ~/.bash_aliases
@@ -66,7 +68,7 @@ export COPY_EXTENDED_ATTRIBUTES_DISABLED=true
 if which fortune > /dev/null && which cowsay > /dev/null && which lolcat > /dev/null; then
   _f() {
     o='bdgpstwy'
-    c=( $(ls `brew --prefix cowsay`/share/cows) )
+    c=( $(ls "${_prefix}/share/cows") )
     w=$((`tput cols` - 10))
 
     fortune -s | cowsay -${o:$(($RANDOM % ${#o})):1} -f${c[$(($RANDOM % ${#c}))]} -W$w | lolcat
@@ -75,3 +77,7 @@ if which fortune > /dev/null && which cowsay > /dev/null && which lolcat > /dev/
   _f
   unset _f
 fi
+
+
+# Unset unused variables.
+unset $_prefix
