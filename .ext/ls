@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+if `which ls` --color=auto > /dev/null 2>&1; then
+  alias ls="ls --color=auto"
+fi
+
+alias ll="ls -al"

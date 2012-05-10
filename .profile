@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get prefix if brew is installed.
-readonly _prefix=$(which brew > /dev/null && brew --prefix || echo '')
+_prefix=$(which brew > /dev/null && brew --prefix || echo '')
 
 
 # Exports.

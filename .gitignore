@@ -10,4 +10,4 @@
 !.bash_aliases
 !.tmux.conf
 !.ext
-!.ext/
+!.ext/*
