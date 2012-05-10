@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if which -s wget; then
+if which wget > /dev/null; then
    alias wget="wget --content-disposition"
 fi

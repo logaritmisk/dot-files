@@ -80,4 +80,4 @@ fi
 
 
 # Unset unused variables.
-unset $_prefix
+unset _prefix

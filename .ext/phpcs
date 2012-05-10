@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if which -s phpcs; then
-   alias phpcs="phpcs --standard=Drupal --report-width=`tput cols`"
-   alias phpcs-all="phpcs --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt"
+if which phpcs > /dev/null; then
+   alias drupalcs="phpcs --standard=Drupal --report-width=`tput cols`"
+   alias drupalcs-all="drupalcs --extensions=php,module,inc,install,test,profile,theme,js,css,info,txt"
 fi
