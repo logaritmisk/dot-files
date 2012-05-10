@@ -46,9 +46,10 @@ GIT_PIECE='$(__git_ps1 " \[$color_yellow\](%s)\[$color_none\]")'
 # Bash prompt.
 export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gray}\]\w${GIT_PIECE:-""}\n\[${color_green}\]\$\[${color_none}\] "
 
-
 # Bash completion.
-test -f `brew --prefix`/etc/bash_completion && . `brew --prefix`/etc/bash_completion
+if which brew > /dev/null && test -f `brew --prefix`/etc/bash_completion; then
+  . `brew --prefix`/etc/bash_completion
+fi
 
 # Bash alias.
 test -f ~/.bash_aliases && . ~/.bash_aliases
@@ -62,7 +63,7 @@ export COPY_EXTENDED_ATTRIBUTES_DISABLED=true
 
 
 # Fortune, Cowsay, & Lolcat.
-if which -s fortune && which -s cowsay && which -s lolcat; then
+if which fortune > /dev/null && which cowsay > /dev/null && which lolcat > /dev/null; then
   _f() {
     o='bdgpstwy'
     c=( $(ls `brew --prefix cowsay`/share/cows) )
