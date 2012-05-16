@@ -65,17 +65,22 @@ export COPY_EXTENDED_ATTRIBUTES_DISABLED=true
 
 
 # Fortune, Cowsay, & Lolcat.
-if which fortune > /dev/null && which cowsay > /dev/null && which lolcat > /dev/null; then
-  _f() {
+if which fortune > /dev/null; then
+  COMMAND="fortune -s"
+
+  if which cowsay > /dev/null; then
     o='bdgpstwy'
-    c=( $(ls "${_prefix}/share/cows") )
+    c=( $(ls `brew --prefix cowsay`/share/cows) )
     w=$((`tput cols` - 10))
 
-    fortune -s | cowsay -${o:$(($RANDOM % ${#o})):1} -f${c[$(($RANDOM % ${#c}))]} -W$w | lolcat
-  }
+    COMMAND="${COMMAND} | cowsay -${o:$(($RANDOM % ${#o})):1} -f${c[$(($RANDOM % ${#c}))]} -W$w"
+  fi
 
-  _f
-  unset _f
+  if which lolcat > /dev/null; then
+    COMMAND="${COMMAND} | lolcat"
+  fi
+
+  eval $COMMAND
 fi
 
 
