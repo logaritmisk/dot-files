@@ -43,12 +43,16 @@ function ssh() {
 # Date piece.
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
 
+# Path piece.
+PATH_PIECE="\$(echo \${PWD/\$HOME/\~} | sed -E 's/.*((\/.*){5})/..\1/')"
+
 # Git piece.
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PIECE='$(__git_ps1 " \[$color_yellow\]($(tmp=`git rev-parse --show-toplevel 2> /dev/null` && basename $tmp):%s)\[$color_none\]")'
 
 # Bash prompt.
-export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gray}\]\w${GIT_PIECE:-""}\n\[${color_green}\]\$\[${color_none}\] "
+export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gray}\]${PATH_PIECE}${GIT_PIECE:-""}\n\[${color_green}\]\$\[${color_none}\] "
+
 
 # Bash completion.
 test -f "${_prefix}/etc/bash_completion" && . "${_prefix}/etc/bash_completion"
