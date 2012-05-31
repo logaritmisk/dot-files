@@ -32,11 +32,16 @@ export color_light_gray='\e[0;37m'
 
 
 # SSH alias to fix TERM problem.
-function ssh() {
+function ssh {
   local old=$TERM
 
   TERM=xterm-color `which ssh` $@
   TERM=$old
+}
+
+# Make locate use Spotlight instead.
+function locate {
+  mdfind "kMDItemDisplayName == '$@'wc"
 }
 
 
