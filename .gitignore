@@ -12,5 +12,3 @@
 !.tmux.conf
 !.ext
 !.ext/*
-!.ssh/
-!.ssh/config
