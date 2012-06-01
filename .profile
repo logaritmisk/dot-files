@@ -49,7 +49,7 @@ function locate {
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
 
 # Path piece.
-PATH_PIECE="\$(echo \${PWD/\$HOME/\~} | sed -E 's/.*((\/.*){5})/..\1/')"
+PATH_PIECE="\$(echo \${PWD/\$HOME/\~} | sed -E 's/.*((\/.*){'\$(((\$(tput cols) - 50) / 10))'})/..\1/')"
 
 # Git piece.
 GIT_PS1_SHOWDIRTYSTATE=true
