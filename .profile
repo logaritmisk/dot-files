@@ -35,13 +35,20 @@ export color_light_gray='\e[0;37m'
 function ssh {
   local old=$TERM
 
-  TERM=xterm-color `which ssh` $@
+  TERM=xterm-color
+
+  `which ssh` $@
+
   TERM=$old
 }
 
 # Make locate use Spotlight instead.
 function locate {
-  mdfind "kMDItemDisplayName == '$@'wc"
+  local root=$1
+
+  shift
+
+  mdfind -onlyin $root "kMDItemDisplayName == '$@'wc"
 }
 
 
