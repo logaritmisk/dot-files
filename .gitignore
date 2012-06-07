@@ -1,9 +1,12 @@
 *
+!.config/
+!.config/fish/
+!.config/fish/config.fish
+!.emacs
+!.emacs.d/
+!.emacs.d/*
 !.gitignore
 !.gitconfig
-!.emacs
-!.emacs.d
-!.emacs.d/*
 !.vimrc
 !.profile
 !.inputrc
