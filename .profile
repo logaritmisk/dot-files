@@ -6,6 +6,8 @@ _prefix=$(which brew > /dev/null && brew --prefix || echo '')
 
 # Exports.
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export LANG=sv_SE.UTF-8
+export LC_ALL=sv_SE.UTF-8
 export EDITOR=emacs
 export TERM=xterm-256color
 export CLICOLOR=true
