@@ -1,9 +1,12 @@
 ; Load path.
 (add-to-list 'load-path "~/.emacs.d")
 
-; Colors as pretty.
+; Mmm colors.
 (require 'color-theme)
-(color-theme-comidia)
+
+(require 'color-theme-tm)
+
+(color-theme-tm)
 
 ; Inhibit.
 (setq inhibit-startup-message t)
