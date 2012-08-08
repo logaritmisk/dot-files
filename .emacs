@@ -1,12 +1,8 @@
 ; Load path.
 (add-to-list 'load-path "~/.emacs.d")
 
-; Mmm colors.
-(require 'color-theme)
-
-(require 'color-theme-tm)
-
-(color-theme-tm)
+; Load theme.
+(load-theme 'tomorrow-night-bright t)
 
 ; Inhibit.
 (setq inhibit-startup-message t)
@@ -17,6 +13,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+; Default tab width.
 (setq c-basic-offset 2)
 (setq tab-width 2)
 
@@ -28,11 +25,7 @@
 ; Use spaces by default.
 (setq indent-tabs-mode nil)
 
-; Prevent Extraneous Tabs
-(setq-default indent-tabs-mode nil)
-
-; Show line and column number.
-(setq line-number-mode t)
+; Show column number.
 (setq column-number-mode t)
 
 ; Show trailing whitespace.
@@ -53,58 +46,29 @@
 
 (global-set-key [f5] 'refresh-file)
 
-
-; Conf windows mode.
-(autoload 'conf-windows-mode "conf-windows-mode" "Mode for info files." t)
-
-
 ; PHP mode.
-(require 'php-mode)
-(require 'drupal-mode)
-
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 
-(add-to-list 'auto-mode-alist '("\\.php$" . drupal-mode))
-(add-to-list 'auto-mode-alist '("\\.module$" . drupal-mode))
-(add-to-list 'auto-mode-alist '("\\.test$" . drupal-mode))
-(add-to-list 'auto-mode-alist '("\\.inc$" . drupal-mode))
-(add-to-list 'auto-mode-alist '("\\.install$" . drupal-mode))
-(add-to-list 'auto-mode-alist '("\\.profile$" . drupal-mode))
-(add-to-list 'auto-mode-alist '("\\.engine$" . drupal-mode))
-(add-to-list 'auto-mode-alist '("\\.info" . conf-windows-mode))
+(add-to-list 'auto-mode-alist '("\\.module$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.test$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.install$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.profile$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.engine$" . php-mode))
 
-(load "drupal-mode")
-
-
-; Puppet mode.
-(load "puppet-mode-init")
+; Conf. mode.
+(add-to-list 'auto-mode-alist '("\\.info" . conf-mode))
 
 
-; CSS mode.
-(setq css-indent-offset 2)
-
-
-; Flymake
-(require 'flymake)
-(require 'flymake-cursor)
-
-(add-hook 'php-mode-hook (lambda() (flymake-mode 1)))
-(add-hook 'drupal-mode-hook (lambda() (flymake-mode 1)))
-(define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
-(define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
-
-(defun flymake-php-init ()
-  "Use php to check the syntax of the current file."
-  (let* ((temp (flymake-init-create-temp-buffer-copy 'flymake-create-temp-inplace))
-          (local (file-relative-name temp (file-name-directory buffer-file-name))))
-    (list "php" (list "-f" local "-l"))))
-
-(add-to-list 'flymake-err-line-patterns
-  '("\\(Parse\\|Fatal\\) error: +\\(.*?\\) in \\(.*?\\) on line \\([0-9]+\\)$" 3 4 nil 2))
-
-(add-to-list 'flymake-allowed-file-name-masks '("\\.php$" flymake-php-init))
-
-(add-to-list 'flymake-allowed-file-name-masks '("\\.module$" flymake-php-init))
-(add-to-list 'flymake-allowed-file-name-masks '("\\.install$" flymake-php-init))
-(add-to-list 'flymake-allowed-file-name-masks '("\\.inc$" flymake-php-init))
-(add-to-list 'flymake-allowed-file-name-masks '("\\.engine$" flymake-php-init))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("cf2bb5e8046ca363183c87e8d33932f2a76a3d705b9db2721631777bbce92968" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
