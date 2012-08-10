@@ -17,6 +17,12 @@
 (setq c-basic-offset 2)
 (setq tab-width 2)
 
+(setq fill-column 78)
+(c-set-offset 'case-label '+)
+(c-set-offset 'arglist-close 'c-lineup-arglist-operators)
+(c-set-offset 'arglist-intro '+) ; for FAPI arrays and DBTNG
+(c-set-offset 'arglist-cont-nonempty 'c-lineup-math) ; for DBTNG
+
 ; UTF-8 love.
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)

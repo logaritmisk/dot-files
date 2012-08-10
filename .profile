@@ -56,6 +56,13 @@ function locate {
   mdfind -onlyin $root "kMDItemDisplayName == '$@'wc"
 }
 
+# Grep with defaults.
+function grp {
+  local scope=${2:-'*'}
+
+  grep -irn $1 $scope
+}
+
 
 # Date piece.
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
