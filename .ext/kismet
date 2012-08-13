@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+if `which kismet` > /dev/null 2>&1; then
+  alias kismet="TERM=xterm-color kismet"
+fi
