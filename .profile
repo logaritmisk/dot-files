@@ -10,7 +10,7 @@ export EDITOR=emacs
 export TERM=xterm-256color
 export CLICOLOR=true
 
-if locale -a | grep -i 'sv_SE.UTF' > /dev/null; then
+if locale -a 2> /dev/null | grep -i 'sv_SE.UTF' > /dev/null; then
   export LANG=sv_SE.UTF-8
   export LC_ALL=sv_SE.UTF-8
 fi
