@@ -60,7 +60,7 @@ function locate {
 function grp {
   local scope=${2:-'*'}
 
-  grep -irn $1 $scope
+  grep -irn "$1" $scope
 }
 
 
