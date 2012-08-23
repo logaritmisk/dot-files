@@ -1,5 +1,6 @@
 ; Load path.
 (add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/geben")
 
 ; Load theme.
 (load-theme 'tomorrow-night-bright t)
