@@ -5,6 +5,7 @@
 !/.emacs
 !/.emacs.d/
 !/.emacs.d/*
+/.emacs.d/tramp
 !/.gitignore
 !/.gitconfig
 !/.vimrc
