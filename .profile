@@ -63,6 +63,10 @@ function grp {
   grep -irn "$1" $scope
 }
 
+function fnd {
+  find * -iname "*$@*"
+}
+
 
 # Date piece.
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
