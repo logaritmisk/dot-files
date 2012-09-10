@@ -30,13 +30,13 @@
 (prefer-coding-system 'utf-8)
 
 ; Use spaces by default.
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 ; Show column number.
 (setq column-number-mode t)
 
 ; Show trailing whitespace.
-(setq show-trailing-whitespace t)
+(setq-default show-trailing-whitespace t)
 
 ; Delete trailing whitespace.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
