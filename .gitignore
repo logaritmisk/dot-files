@@ -20,3 +20,5 @@
 /.weechat/*
 !/.weechat/irc.conf
 !/.weechat/weechat.conf
+!/.extra/
+!/.extra/*
