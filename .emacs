@@ -5,6 +5,35 @@
 ; Load theme.
 (load-theme 'tomorrow-night-bright t)
 
+; Load ECB.
+(setq stack-trace-on-error t)
+
+(add-to-list 'load-path "~/.emacs.d/ecb")
+
+(require 'ecb)
+
+(global-set-key (kbd "<M-left>") 'ecb-goto-window-methods)
+(global-set-key (kbd "<M-right>") 'ecb-goto-window-edit1)
+
+; Smart tab.
+(defun smart-tab ()
+  "This smart tab is minibuffer compliant: it acts as usual in
+    the minibuffer. Else, if mark is active, indents region. Else if
+    point is at the end of a symbol, expands it. Else indents the
+    current line."
+  (interactive)
+  (if (minibufferp)
+      (unless (minibuffer-complete)
+        (dabbrev-expand nil))
+    (if mark-active
+        (indent-region (region-beginning)
+                       (region-end))
+      (if (looking-at "\\_>")
+          (dabbrev-expand nil)
+        (indent-for-tab-command)))))
+
+(global-set-key (kbd "<tab>") 'smart-tab)
+
 ; Inhibit.
 (setq inhibit-startup-message t)
 (setq inhibit-startup-screen t)
@@ -28,6 +57,9 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
+; Linum mode.
+(setq linum-format "%d ")
 
 ; Use spaces by default.
 (setq-default indent-tabs-mode nil)
@@ -64,15 +96,20 @@
 (add-to-list 'auto-mode-alist '("\\.engine$" . php-mode))
 
 ; Conf. mode.
-(add-to-list 'auto-mode-alist '("\\.info" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.info$" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.make$" . conf-mode))
 
 
+
+; Custom set variables.
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("cf2bb5e8046ca363183c87e8d33932f2a76a3d705b9db2721631777bbce92968" default))))
+ '(custom-safe-themes (quote ("cf2bb5e8046ca363183c87e8d33932f2a76a3d705b9db2721631777bbce92968" default)))
+ '(ecb-options-version "2.40")
+ '(ecb-source-path (quote (("/Users/olsson/Wunderkraut/platforms" "Wunderkraut")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
