@@ -47,6 +47,9 @@
 (setq c-basic-offset 2)
 (setq tab-width 2)
 
+; Javascript mode.
+(setq js-indent-level 2)
+
 (setq fill-column 78)
 (c-set-offset 'case-label '+)
 (c-set-offset 'arglist-close 'c-lineup-arglist-operators)
