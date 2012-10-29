@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if which git > /dev/null; then
+  alias gs="git status"
+  alias gd="git diff"
+fi
