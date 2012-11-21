@@ -57,10 +57,10 @@ function locate {
 }
 
 # Grep with defaults.
-function grp {
+function grp() {
   local scope=${2:-'*'}
 
-  grep -irn "$1" $scope
+  grep -irn --color=auto "$1" $scope
 }
 
 function fnd {
