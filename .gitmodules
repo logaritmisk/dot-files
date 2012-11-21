@@ -1,0 +1,3 @@
+[submodule ".emacs.d/yaml-mode"]
+	path = .emacs.d/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git

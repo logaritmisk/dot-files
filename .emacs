@@ -2,8 +2,10 @@
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/geben")
 
+
 ; Load theme.
 (load-theme 'tomorrow-night-bright t)
+
 
 ; Load ECB.
 (setq stack-trace-on-error t)
@@ -14,6 +16,7 @@
 
 (global-set-key (kbd "<M-left>") 'ecb-goto-window-methods)
 (global-set-key (kbd "<M-right>") 'ecb-goto-window-edit1)
+
 
 ; Smart tab.
 (defun smart-tab ()
@@ -34,18 +37,22 @@
 
 (global-set-key (kbd "<tab>") 'smart-tab)
 
+
 ; Inhibit.
 (setq inhibit-startup-message t)
 (setq inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
 
+
 ; Backup files.
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+
 ; Default tab width.
 (setq c-basic-offset 2)
 (setq tab-width 2)
+
 
 ; Javascript mode.
 (setq js-indent-level 2)
@@ -56,30 +63,47 @@
 (c-set-offset 'arglist-intro '+) ; for FAPI arrays and DBTNG
 (c-set-offset 'arglist-cont-nonempty 'c-lineup-math) ; for DBTNG
 
+
+; YAML mode.
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+(add-hook 'yaml-mode-hook
+  '(lambda ()
+    (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
+
 ; UTF-8 love.
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+
 ; Linum mode.
 (setq linum-format "%d ")
+
 
 ; Use spaces by default.
 (setq-default indent-tabs-mode nil)
 
+
 ; Show column number.
 (setq column-number-mode t)
+
 
 ; Show trailing whitespace.
 (setq-default show-trailing-whitespace t)
 
+
 ; Delete trailing whitespace.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 
 ; Mac keyboard stuff.
 (setq mac-option-modifier nil
       mac-command-modifier 'meta
       x-select-enable-clipboard t)
+
 
 ; Nice refresh feature.
 (defun refresh-file ()
@@ -87,6 +111,7 @@
   (revert-buffer t t t))
 
 (global-set-key [f5] 'refresh-file)
+
 
 ; PHP mode.
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
@@ -97,6 +122,7 @@
 (add-to-list 'auto-mode-alist '("\\.install$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.profile$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.engine$" . php-mode))
+
 
 ; Conf. mode.
 (add-to-list 'auto-mode-alist '("\\.info$" . conf-mode))
