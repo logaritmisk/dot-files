@@ -2,9 +2,15 @@
   name = logaritmisk
   email = anders.e.olsson@gmail.com
 
-[alias]
-  hlg = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  plg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[diff]
+  renames = copies
+
+[core]
+  autocrlf = false
+  safecrlf = false
+
+[branch]
+  autosetuprebase = always
 
 [color]
   branch = auto
@@ -29,3 +35,7 @@
 
 [push]
   default = simple
+
+[alias]
+  hlg = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  plg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
