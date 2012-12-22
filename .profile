@@ -6,9 +6,11 @@ _prefix=$(which brew > /dev/null && brew --prefix || echo '')
 
 # Exports.
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export EDITOR=emacs
 export TERM=xterm-256color
 export CLICOLOR=true
+
+export VISUAL=emacs
+export EDITOR=emacs
 
 if locale -a 2> /dev/null | grep -i 'sv_SE.UTF' > /dev/null; then
   export LANG=sv_SE.UTF-8

@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 color jellybeans
 syntax on
 
