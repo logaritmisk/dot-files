@@ -74,7 +74,7 @@ function fnd {
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
 
 # Path piece.
-PATH_PIECE="\$(echo \${PWD/\$HOME/\~} | sed -E 's/.*((\/.*){'\$(((\$(tput cols) - 50) / 10))'})/..\1/')"
+PATH_PIECE="\$(echo \${PWD/\$HOME/\~} | sed -E 's/.*((\/.*){'\$(((\$(tput cols) - 64) / 10))'})/..\1/')"
 
 # Git piece.
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -108,6 +108,8 @@ if which fortune > /dev/null; then
     w=$((`tput cols` - 10))
 
     COMMAND="${COMMAND} | cowsay -${o:$(($RANDOM % ${#o})):1} -f${c[$(($RANDOM % ${#c}))]} -W$w"
+  elif which ponysay > /dev/null; then
+    COMMAND="${COMMAND} | ponysay"
   fi
 
   if which lolcat > /dev/null; then
