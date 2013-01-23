@@ -98,7 +98,7 @@ export COPYFILE_DISABLE=true
 export COPY_EXTENDED_ATTRIBUTES_DISABLED=true
 
 
-# Fortune, Cowsay, & Lolcat.
+# Fortune, Cowsay/Ponysay, & Lolcat.
 if which fortune > /dev/null; then
   COMMAND="fortune -s"
 
