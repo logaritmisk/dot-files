@@ -6,7 +6,6 @@ _prefix=$(which brew > /dev/null && brew --prefix || echo '')
 
 # Exports.
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export TERM=xterm-256color
 export CLICOLOR=true
 
 export VISUAL=emacs
@@ -37,17 +36,6 @@ export color_yellow='\e[1;33m'
 export color_gray='\e[0;90m'
 export color_light_gray='\e[0;37m'
 
-
-# SSH alias to fix TERM problem.
-function ssh {
-  local old=$TERM
-
-  TERM=xterm-color
-
-  `which ssh` $@
-
-  TERM=$old
-}
 
 # Make locate use Spotlight instead.
 function locate {
@@ -118,6 +106,9 @@ if which fortune > /dev/null; then
 
   eval $COMMAND
 fi
+
+
+source "`brew --prefix`/etc/grc.bashrc"
 
 
 # Unset unused variables.
