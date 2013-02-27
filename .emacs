@@ -44,6 +44,7 @@
    flymake-cursor
    flymake-easy
    flymake-php
+   git-gutter
    emacs-tron-theme))
 
 (el-get 'sync my:el-get-packages)
@@ -58,7 +59,6 @@
 (setq auto-save-default nil)
 
 (setq linum-format "%4d ")
-(global-linum-mode 1)
 
 (setq-default show-trailing-whitespace t)
 
