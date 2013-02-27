@@ -4,8 +4,10 @@
 !/.config/fish/config.fish
 !/.emacs
 !/.emacs.d/
-!/.emacs.d/*
-/.emacs.d/tramp
+!/.emacs.d/packages/
+!/.emacs.d/packages/*.el
+!/.emacs.d/snippets/
+!/.emacs.d/snippets/*.el
 !/.gitignore
 !/.gitconfig
 !/.vimrc
