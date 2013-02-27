@@ -1,15 +1,15 @@
 (require 'cl)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(setq el-get-user-package-directory "~/.emacs.d/packages.d/")
+(setq el-get-user-package-directory "~/.emacs.d/packages")
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
+    (let (el-get-master-branch)
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
 
 
 (setq
@@ -20,6 +20,14 @@
    (:name geben
           :type svn
           :url "http://geben-on-emacs.googlecode.com/svn/trunk/")
+   (:name flymake-easy
+          :type github
+          :pkgname "purcell/flymake-easy"
+          :features flymake-easy)
+   (:name flymake-php
+          :type github
+          :pkgname "purcell/flymake-php"
+          :features flymake-php)
    (:name emacs-tron-theme
           :type github
           :pkgname "ivanmarcin/emacs-tron-theme"
@@ -31,6 +39,10 @@
    php-mode
    geben
    yasnippet
+   flymake
+   flymake-cursor
+   flymake-easy
+   flymake-php
    emacs-tron-theme))
 
 (el-get 'sync my:el-get-packages)
@@ -44,19 +56,18 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
-(setq linum-format "%d ")
+(setq linum-format "%4d ")
 (global-linum-mode 1)
 
 (setq-default show-trailing-whitespace t)
 
-(setq c-basic-offset 2)
 (setq tab-width 2)
+(setq c-basic-offset 2)
 (setq-default indent-tabs-mode nil)
 
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
-
 
 
 ;(yas-global-mode 1)
@@ -66,12 +77,7 @@
 ; Javascript mode.
 ;(setq js-indent-level 2)
 
-;(setq fill-column 78)
-;(c-set-offset 'case-label '+)
-;(c-set-offset 'arglist-close 'c-lineup-arglist-operators)
-;(c-set-offset 'arglist-intro '+) ; for FAPI arrays and DBTNG
-;(c-set-offset 'arglist-cont-nonempty 'c-lineup-math) ; for DBTNG
-
+(setq fill-column 78)
 
 ; Conf mode.
 (add-to-list 'auto-mode-alist '("\\.info$" . conf-mode))
