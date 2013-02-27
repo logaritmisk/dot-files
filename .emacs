@@ -39,6 +39,7 @@
    php-mode
    geben
    yasnippet
+   textmate
    flymake
    flymake-cursor
    flymake-easy
@@ -69,15 +70,12 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-
-;(yas-global-mode 1)
-
-
-
-; Javascript mode.
-;(setq js-indent-level 2)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'none)
 
 (setq fill-column 78)
+
+
 
 ; Conf mode.
 (add-to-list 'auto-mode-alist '("\\.info$" . conf-mode))

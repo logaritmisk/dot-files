@@ -104,7 +104,7 @@ if which fortune > /dev/null; then
     COMMAND="${COMMAND} | lolcat"
   fi
 
-  #eval $COMMAND
+  eval $COMMAND
 fi
 
 
