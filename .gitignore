@@ -5,9 +5,10 @@
 !/.emacs
 !/.emacs.d/
 !/.emacs.d/packages/
-!/.emacs.d/packages/*.el
+!/.emacs.d/packages/*
 !/.emacs.d/snippets/
-!/.emacs.d/snippets/*.el
+!/.emacs.d/snippets/*
+!/.emacs.d/snippets/*/*
 !/.gitignore
 !/.gitconfig
 !/.vimrc
@@ -24,3 +25,4 @@
 !/.weechat/weechat.conf
 !/.extra/
 !/.extra/*
+*.elc
