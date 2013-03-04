@@ -38,6 +38,10 @@ export color_gray='\e[0;90m'
 export color_light_gray='\e[0;37m'
 
 
+# Bash completion.
+test -f "${_prefix}/etc/bash_completion" && . "${_prefix}/etc/bash_completion"
+
+
 # Date piece.
 DATE_PIECE="\[${color_gray}\]\$(date '+%a %H:%M:%S')\[${color_none}\]"
 
@@ -53,9 +57,6 @@ fi
 # Bash prompt.
 export PS1="${DATE_PIECE} \u\[${color_green}\]@\[${color_none}\]\h \[${color_gray}\]${PATH_PIECE}${GIT_PIECE:-""}\n\[${color_green}\]\$\[${color_none}\] "
 
-
-# Bash completion.
-test -f "${_prefix}/etc/bash_completion" && . "${_prefix}/etc/bash_completion"
 
 # Bash alias.
 test -f ~/.bash_aliases && . ~/.bash_aliases
