@@ -55,6 +55,9 @@
 (line-number-mode 1)
 (column-number-mode 1)
 
+(show-paren-mode t)
+(setq show-paren-style 'parenthesis)
+
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
@@ -78,11 +81,10 @@
 
 (setq fill-column 78)
 
+(require 'tramp)
+(setq tramp-default-method "ssh")
 
 
-; Conf mode.
+
 (add-to-list 'auto-mode-alist '("\\.info$" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.make$" . conf-mode))
-
-
-; Custom set variables.
