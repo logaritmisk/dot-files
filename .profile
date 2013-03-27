@@ -12,11 +12,6 @@ export CLICOLOR=true
 export VISUAL=emacs
 export EDITOR=emacs
 
-if locale -a 2> /dev/null | grep -i 'sv_SE.UTF' > /dev/null; then
-  export LANG=sv_SE.UTF-8
-  export LC_ALL=sv_SE.UTF-8
-fi
-
 
 # Bash colors.
 export color_none='\e[0m'
