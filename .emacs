@@ -37,6 +37,8 @@
  my:el-get-packages
  '(el-get
    php-mode
+   python-mode
+   yaml-mode
    geben
    yasnippet
    textmate
