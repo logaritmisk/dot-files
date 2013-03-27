@@ -1,0 +1,4 @@
+#contributor : Anders Olsson <anders.e.olsson@gmail.com>
+#name : substr(...)
+# --
+substr(${string string}, ${int start[, int length]})$0
