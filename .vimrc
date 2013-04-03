@@ -1,7 +1,19 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-pathogen'
+Bundle 'nanotech/jellybeans.vim'
+
 call pathogen#infect()
 
 color jellybeans
+
 syntax on
+filetype plugin indent on
 
 set showmode                    " always show what mode we're currently editing in
 set tabstop=2                   " a tab is two spaces

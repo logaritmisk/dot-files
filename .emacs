@@ -39,6 +39,7 @@
    php-mode
    python-mode
    yaml-mode
+   markdown-mode
    geben
    yasnippet
    textmate
@@ -47,7 +48,8 @@
    flymake-easy
    flymake-php
    git-gutter
-   emacs-tron-theme))
+   emacs-tron-theme
+   tomorrow-theme))
 
 (el-get 'sync my:el-get-packages)
 
@@ -66,6 +68,7 @@
 (setq linum-format "%4d ")
 
 (setq-default show-trailing-whitespace t)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq tab-width 2)
 (setq c-basic-offset 2)

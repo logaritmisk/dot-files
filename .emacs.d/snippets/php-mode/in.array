@@ -1,0 +1,4 @@
+#contributor : Anders Olsson <anders.e.olsson@gmail.com>
+#name : in_array(..., ...)
+# --
+in_array(${mixed $needle}, ${array $haystack[, bool $strict = FALSE]})$0
