@@ -12,6 +12,8 @@ export CLICOLOR=true
 export VISUAL=emacs
 export EDITOR=emacs
 
+export LC_ALL=en_US.UTF-8
+
 
 # Bash colors.
 export color_none='\e[0m'
