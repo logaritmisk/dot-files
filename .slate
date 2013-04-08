@@ -3,3 +3,4 @@ bind    left:ctrl;alt;cmd       move    screenOriginX;screenOriginY screenSizeX;
 bind    right:ctrl;alt;cmd      move    screenOriginX;screenOriginY screenSizeX;screenSizeY right
 
 bind    z:ctrl;alt;space        move    screenOriginX+screenSizeX*.05;screenSizeY/2 screenSizeX*.90;screenSizeY/2-screenSizeX*.05
+bind    x:ctrl;alt;space        move    screenOriginX+screenSizeX*.05;screenOriginY+screenSizeY*.05 screenSizeX*.90;screenSizeY*.90
