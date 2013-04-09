@@ -40,6 +40,7 @@
    python-mode
    yaml-mode
    markdown-mode
+   graphviz-dot-mode
    geben
    yasnippet
    textmate
