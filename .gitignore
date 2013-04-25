@@ -26,5 +26,7 @@
 !/.styles/
 !/.styles/*
 !/.slate
+!/.grc/
+!/.grc/*
 *.elc
 *~

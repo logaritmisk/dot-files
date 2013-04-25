@@ -1,0 +1,7 @@
+# project
+regexp=\+\w+
+colours=red
+=======
+# location
+regexp=\@\w+
+colours=green

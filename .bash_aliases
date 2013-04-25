@@ -8,3 +8,5 @@ alias egrep="egrep --color=auto"
 alias spotify="osascript /Users/olsson/.bin/SpotifyControl/SpotifyControl.scpt"
 
 alias etags-gen="find . -type f -iname '*.php' -o -iname '*.inc' -o -iname '*.module' | xargs etags"
+
+alias t="todo.sh"

@@ -44,6 +44,7 @@
    geben
    yasnippet
    textmate
+   ecb
    flymake
    flymake-cursor
    flymake-easy
