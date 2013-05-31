@@ -9,9 +9,6 @@
   autocrlf = false
   safecrlf = false
 
-[branch]
-  autosetuprebase = always
-
 [color]
   branch = auto
   diff = auto
