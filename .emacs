@@ -92,6 +92,7 @@
 (setq tramp-default-method "ssh")
 
 
+(add-to-list 'auto-mode-alist '("\\.erb$" . html-mode))
 
 (add-to-list 'auto-mode-alist '("\\.info$" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.make$" . conf-mode))
