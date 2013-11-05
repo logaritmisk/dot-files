@@ -1,0 +1,10 @@
+*
+!/.gitignore
+!/.gitconfig
+
+!/.emacs
+
+!/.zshrc
+!/.oh-my-zsh/custom/
+
+!/.tmux.conf
