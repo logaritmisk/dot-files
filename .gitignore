@@ -8,3 +8,5 @@
 !/.oh-my-zsh/custom/
 
 !/.tmux.conf
+
+!/.gemrc
