@@ -54,3 +54,6 @@ export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin
 
 # rbenv.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# zsh-syntax-highlighting.
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
