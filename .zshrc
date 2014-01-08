@@ -50,5 +50,7 @@ export LANG=en_US.UTF-8
 export EDITOR=emacs
 export RBENV_ROOT=/usr/local/var/rbenv
 
+export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin
+
 # rbenv.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
