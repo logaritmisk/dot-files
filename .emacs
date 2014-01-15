@@ -14,6 +14,7 @@
 (setq dim-packages
       '(php-mode
 	python-mode
+	ruby-mode
 	yaml-mode
 	textmate))
 

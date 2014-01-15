@@ -45,15 +45,26 @@ plugins=(git textmate z history-substring-search zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export LANG=en_US.UTF-8
 export EDITOR=emacs
-export RBENV_ROOT=/usr/local/var/rbenv
 
+# go.
 export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin
 
-# rbenv.
+# rbenv and pyenv.
+export RBENV_ROOT=/usr/local/var/rbenv
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PYENV_ROOT=/usr/local/opt/pyenv
+
+if which pyenv > /dev/null; then
+  export PATH="$PYENV_ROOT/shims:${PATH}"
+  source "$PYENV_ROOT/completions/pyenv.zsh"
+
+  eval "$(pyenv init -)";
+fi
 
 # zsh-syntax-highlighting.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
