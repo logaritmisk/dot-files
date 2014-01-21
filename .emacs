@@ -39,15 +39,4 @@
 (add-to-list 'custom-theme-load-path
 	     (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("6c57adb4d3da69cfb559e103e555905c9eec48616104e217502d0a372e63dcea" "47e37fa090129214330d13a68549d5c86ccc2c41f4979cb4be130ff945a9859a" "f07583bdbcca020adecb151868c33820dfe3ad5076ca96f6d51b1da3f0db7105" "ec0c9d1715065a594af90e19e596e737c7b2cdaa18eb1b71baf7ef696adbefb0" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(load-theme 'ld-dark t)
