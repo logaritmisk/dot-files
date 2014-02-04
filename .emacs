@@ -13,10 +13,12 @@
 
 (setq dim-packages
       '(php-mode
-	python-mode
-	ruby-mode
-	yaml-mode
-	textmate))
+        js2-mode
+        python-mode
+        ruby-mode
+        yaml-mode
+        textmate
+        ethan-wspace))
 
 (el-get 'sync dim-packages)
 
@@ -33,10 +35,7 @@
 (show-paren-mode t)
 (setq show-paren-style 'parenthesis)
 
-(setq-default show-trailing-whitespace t)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 (add-to-list 'custom-theme-load-path
-	     (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
+             (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
 
 (load-theme 'ld-dark t)
