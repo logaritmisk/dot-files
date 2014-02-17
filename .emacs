@@ -14,6 +14,7 @@
 (setq dim-packages
       '(php-mode
         js2-mode
+        css-mode
         python-mode
         ruby-mode
         yaml-mode

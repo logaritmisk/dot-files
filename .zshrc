@@ -66,5 +66,12 @@ if which pyenv > /dev/null; then
   eval "$(pyenv init -)";
 fi
 
+# grc.
+if which grc > /dev/null; then
+  source "$(brew --prefix)/etc/grc.bashrc"
+
+  alias ifconfig='colourify ifconfig'
+fi
+
 # zsh-syntax-highlighting.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
