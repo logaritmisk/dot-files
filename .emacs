@@ -40,3 +40,8 @@
              (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
 
 (load-theme 'ld-dark t)
+
+(add-to-list 'auto-mode-alist '("\\.erb$" . html-mode))
+
+(add-to-list 'auto-mode-alist '("\\.info$" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.make$" . conf-mode))
