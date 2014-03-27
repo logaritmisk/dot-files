@@ -19,7 +19,9 @@
         ruby-mode
         yaml-mode
         textmate
-        ethan-wspace))
+        ethan-wspace
+        flycheck
+        flycheck-color-mode-line))
 
 (el-get 'sync dim-packages)
 
@@ -37,9 +39,9 @@
 (setq show-paren-style 'parenthesis)
 
 (add-to-list 'custom-theme-load-path
-             (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
+             (file-name-as-directory "~/.emacs.d/themes"))
 
-(load-theme 'ld-dark t)
+(load-theme 'monokai t)
 
 (add-to-list 'auto-mode-alist '("\\.erb$" . html-mode))
 
