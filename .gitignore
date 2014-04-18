@@ -2,7 +2,10 @@
 !/.gitignore
 !/.gitconfig
 
-!/.emacs
+!/.emacs.d
+/.emacs.d/*
+!/.emacs.d/Cask
+!/.emacs.d/init.el
 
 !/.zshrc
 !/.oh-my-zsh/custom/
@@ -11,4 +14,4 @@
 
 !/.gemrc
 
-!/.zephyros.coffee
+!/.phoenix.js
