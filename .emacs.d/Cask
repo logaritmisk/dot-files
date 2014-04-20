@@ -9,6 +9,8 @@
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
 (depends-on "flycheck-color-mode-line")
+(depends-on "haml-mode")
+(depends-on "html-mode")
 (depends-on "less-css-mode")
 (depends-on "package-build")
 (depends-on "pallet")
