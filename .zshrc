@@ -55,7 +55,7 @@ export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin
 # rbenv and pyenv.
 export RBENV_ROOT=/usr/local/var/rbenv
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 export PYENV_ROOT=/usr/local/opt/pyenv
 
