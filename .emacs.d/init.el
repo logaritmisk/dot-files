@@ -18,15 +18,12 @@
 (show-paren-mode t)
 (setq show-paren-style 'parenthesis)
 
-;; Theme
+;;; Theme
 (load-theme 'monokai t)
 
-;; Packages
+;;; Packages
 (use-package flycheck
-  :config
-  (progn
-    (setq flycheck-display-errors-function nil)
-    (add-hook 'after-init-hook 'global-flycheck-mode)))
+  :config (add-hook 'after-init-hook 'global-flycheck-mode))
 
 (use-package flycheck-cask
   :init (add-hook 'flycheck-mode-hook 'flycheck-cask-setup))
@@ -42,9 +39,9 @@
 
 (use-package js-mode
   :mode ("\\.json$" . js-mode)
-  :init
-  (progn
-    (add-hook 'js-mode-hook (lambda () (setq js-indent-level 2)))))
+  :init (add-hook 'js-mode-hook
+		  '(lambda ()
+		     (setq js-indent-level 2))))
 
 (use-package ruby-mode
   :mode (("Gemfile$" . ruby-mode)
@@ -62,3 +59,18 @@
 (use-package conf-mode
   :mode (("\\.info$" . conf-mode)
 	 ("\\.make$" . conf-mode)))
+
+(use-package json-mode
+  :mode ("\\.json$" . json-mode))
+
+(use-package php-mode
+  :mode (("\\.module$" . php-mode)
+	 ("\\.inc$" . php-mode))
+  :init (add-hook 'php-mode-hook
+		  '(lambda () 
+		     (setq tab-width 2)
+		     (setq c-basic-offset 2)
+		     (c-set-offset 'case-label '+)
+		     (c-set-offset 'arglist-close 0)
+		     (c-set-offset 'arglist-intro '+)
+		     (c-set-offset 'arglist-cont-nonempty 'c-lineup-math))))
