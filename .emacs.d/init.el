@@ -28,6 +28,9 @@
 (use-package flycheck-cask
   :init (add-hook 'flycheck-mode-hook 'flycheck-cask-setup))
 
+(use-package ethan-wspace
+  :idle (global-ethan-wspace-mode 1))
+
 (use-package yaml-mode
   :mode ("\\.yml$" . yaml-mode))
 
@@ -40,15 +43,15 @@
 (use-package js-mode
   :mode ("\\.json$" . js-mode)
   :init (add-hook 'js-mode-hook
-		  '(lambda ()
-		     (setq js-indent-level 2))))
+                  '(lambda ()
+                     (setq js-indent-level 2))))
 
 (use-package ruby-mode
   :mode (("Gemfile$" . ruby-mode)
-	 ("Rakefile$" . ruby-mode)
-	 ("Guardfile$" . ruby-mode)
-	 ("config.ru$" . ruby-mode)
-	 ("\\.gemspec$" . ruby-mode)))
+         ("Rakefile$" . ruby-mode)
+         ("Guardfile$" . ruby-mode)
+         ("config.ru$" . ruby-mode)
+         ("\\.gemspec$" . ruby-mode)))
 
 (use-package sh-script
   :config (setq sh-basic-offset 2))
@@ -58,19 +61,19 @@
 
 (use-package conf-mode
   :mode (("\\.info$" . conf-mode)
-	 ("\\.make$" . conf-mode)))
+         ("\\.make$" . conf-mode)))
 
 (use-package json-mode
   :mode ("\\.json$" . json-mode))
 
 (use-package php-mode
   :mode (("\\.module$" . php-mode)
-	 ("\\.inc$" . php-mode))
+         ("\\.inc$" . php-mode))
   :init (add-hook 'php-mode-hook
-		  '(lambda () 
-		     (setq tab-width 2)
-		     (setq c-basic-offset 2)
-		     (c-set-offset 'case-label '+)
-		     (c-set-offset 'arglist-close 0)
-		     (c-set-offset 'arglist-intro '+)
-		     (c-set-offset 'arglist-cont-nonempty 'c-lineup-math))))
+                  '(lambda ()
+                     (setq tab-width 2)
+                     (setq c-basic-offset 2)
+                     (c-set-offset 'case-label '+)
+                     (c-set-offset 'arglist-close 0)
+                     (c-set-offset 'arglist-intro '+)
+                     (c-set-offset 'arglist-cont-nonempty 'c-lineup-math))))
