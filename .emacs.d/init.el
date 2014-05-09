@@ -23,13 +23,18 @@
 
 ;;; Packages
 (use-package flycheck
-  :config (add-hook 'after-init-hook 'global-flycheck-mode))
+  :idle (global-flycheck-mode 1)
+  :idle-priority 1)
 
 (use-package flycheck-cask
   :init (add-hook 'flycheck-mode-hook 'flycheck-cask-setup))
 
 (use-package ethan-wspace
-  :idle (global-ethan-wspace-mode 1))
+  :idle (global-ethan-wspace-mode 1)
+  :idle-priority 2)
+
+(use-package hlinum
+  :init (hlinum-activate))
 
 (use-package yaml-mode
   :mode ("\\.yml$" . yaml-mode))
@@ -68,6 +73,7 @@
 
 (use-package php-mode
   :mode (("\\.module$" . php-mode)
+         ("\\.install$" . php-mode)
          ("\\.inc$" . php-mode))
   :init (add-hook 'php-mode-hook
                   '(lambda ()
