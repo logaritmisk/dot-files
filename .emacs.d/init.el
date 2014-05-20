@@ -61,6 +61,12 @@
 (use-package sh-script
   :config (setq sh-basic-offset 2))
 
+(use-package go-mode
+  :init (add-hook 'go-mode-hook
+                  '(lambda ()
+                     (setq tab-width 2)
+                     (set 'ethan-wspace-errors (remove 'tabs ethan-wspace-errors)))))
+
 (use-package html-mode
   :mode ("\\.erb$" . html-mode))
 

@@ -50,7 +50,8 @@ export LANG=en_US.UTF-8
 export EDITOR=emacs
 
 # go.
-export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=$HOME/.go
 
 # rbenv and pyenv.
 export RBENV_ROOT=/usr/local/var/rbenv
