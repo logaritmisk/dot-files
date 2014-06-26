@@ -33,6 +33,17 @@ api.bind('x', ['ctrl', 'alt'], function() {
   });
 });
 
+api.bind('f', ['ctrl', 'alt'], function() {
+  return moveWindow(function(frame) {
+    var y;
+
+    y = frame.height * 0.05;
+
+    frame.y += y;
+    frame.height -= y * 2;
+  });
+});
+
 moveWindow = function(fn) {
   var frame, win;
 

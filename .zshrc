@@ -76,3 +76,11 @@ fi
 
 # zsh-syntax-highlighting.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
+
+# fzf.
+source ~/.fzf.zsh
+
+# fkill - kill process.
+fkill() {
+  ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
+}
