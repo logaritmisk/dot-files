@@ -18,6 +18,9 @@
 (show-paren-mode t)
 (setq show-paren-style 'parenthesis)
 
+(setq require-final-newline nil)
+(setq mode-require-final-newline nil)
+
 ;;; Theme
 (load-theme 'monokai t)
 
@@ -56,7 +59,11 @@
          ("Rakefile$" . ruby-mode)
          ("Guardfile$" . ruby-mode)
          ("config.ru$" . ruby-mode)
-         ("\\.gemspec$" . ruby-mode)))
+         ("\\.gemspec$" . ruby-mode))
+  :init (add-hook 'ruby-mode-hook
+                  (lambda ()
+                    (setq require-final-newline nil)
+                    (setq mode-require-final-newline nil))))
 
 (use-package sh-script
   :config (setq sh-basic-offset 2))
