@@ -17,3 +17,6 @@
 !/.phoenix.js
 
 !/.agignore
+
+!/.grc
+!/.grc/*
