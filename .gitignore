@@ -14,7 +14,8 @@
 
 !/.gemrc
 
-!/.phoenix.js
+!/.hydra
+!/.hydra/*
 
 !/.agignore
 
