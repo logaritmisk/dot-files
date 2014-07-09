@@ -30,7 +30,7 @@ function movewindow_x()
   local win = window.focusedwindow()
   local frame = win:screen():frame_without_dock_or_menu()
 
-  local x = frame.x * 0.05
+  local x = frame.w * 0.05
   local y = frame.h * 0.05
 
   frame.x = frame.x + x
