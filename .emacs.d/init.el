@@ -59,7 +59,8 @@
          ("Rakefile$" . ruby-mode)
          ("Guardfile$" . ruby-mode)
          ("config.ru$" . ruby-mode)
-         ("\\.gemspec$" . ruby-mode))
+         ("\\.gemspec$" . ruby-mode)
+         ("\\.rb$" . ruby-mode))
   :init (add-hook 'ruby-mode-hook
                   (lambda ()
                     (setq require-final-newline nil)
