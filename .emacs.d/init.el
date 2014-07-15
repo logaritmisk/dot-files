@@ -25,6 +25,8 @@
 (load-theme 'monokai t)
 
 ;;; Packages
+(use-package textmate)
+
 (use-package flycheck
   :idle (global-flycheck-mode 1)
   :idle-priority 1)
@@ -72,7 +74,7 @@
 (use-package go-mode
   :init (add-hook 'go-mode-hook
                   '(lambda ()
-                     (setq tab-width 2)
+                     (setq tab-width 4)
                      (set 'ethan-wspace-errors (remove 'tabs ethan-wspace-errors)))))
 
 (use-package html-mode
