@@ -25,7 +25,8 @@
 (load-theme 'monokai t)
 
 ;;; Packages
-(use-package textmate)
+(use-package textmate
+  :init (textmate-mode))
 
 (use-package flycheck
   :idle (global-flycheck-mode 1)
