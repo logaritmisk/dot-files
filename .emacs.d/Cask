@@ -18,6 +18,7 @@
 (depends-on "js3-mode")
 (depends-on "json-mode")
 (depends-on "less-css-mode")
+(depends-on "lua-mode")
 (depends-on "markdown-mode")
 (depends-on "monokai-theme")
 (depends-on "nginx-mode")

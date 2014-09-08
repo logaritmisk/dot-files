@@ -69,6 +69,12 @@
                     (setq require-final-newline nil)
                     (setq mode-require-final-newline nil))))
 
+(use-package python-mode
+  :init (add-hook 'python-mode-hook
+                  (lambda ()
+                    (setq require-final-newline nil)
+                    (setq mode-require-final-newline nil))))
+
 (use-package sh-script
   :config (setq sh-basic-offset 2))
 
